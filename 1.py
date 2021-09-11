@@ -1,13 +1,14 @@
+import math
 import sys
 sys.stdin = open('input.txt', 'r')
 sys.stdout = open('output.txt', 'w')
-# Ввод, если два числа и более в одну строку
-for i in range(5):
-    (a, b, c) = [int(s) for s in input().split()]
-    if 0<=a<=23:
-        if 0<=b<60 and 0<=c<60:
-                print("YES")
-        else:
-                print("NO")
-    else:
-            print("NO")
+(a, b, c) = [int(s) for s in input().split()]
+(h, l,) = [int(s) for s in input().split()]
+o = (a * b + a* c + b*c)*2-a*b
+o = o - 0.15*o
+v = h*0.001
+p = l*0.001
+j = v *p
+j = j - 0.1 * j
+u = o/j
+print(math.ceil(u))
